@@ -75,7 +75,7 @@ def make_melon_type_lookup(melon_types):
 
     return melon_by_code
 
-print(make_melon_type_lookup(make_melon_types()))
+#print(make_melon_type_lookup(make_melon_types()))
 
 
 
@@ -98,12 +98,11 @@ class Melon:
 
     
     def is_sellable(self):
-        """method here is_sellable"""
-        
+        """can this melon be sold"""
         if self.shape > 5 and self.color > 5 and self.field != 3:
-            sellable = True
+            return True
         else: 
-            sellable = False
+            return False
 
         #return message
         
@@ -111,9 +110,9 @@ class Melon:
 
 def make_melons(melon_types):
     """Returns a list of Melon objects."""
-
     # Fill in the rest
     all_melons = []
+    #melon_by_code = dictionary of melon types by code
     melon_by_code = make_melon_type_lookup(melon_types)
 
     melon1 = Melon(melon_by_code['yw'], 8, 7, 2, 'Sheila')
@@ -152,4 +151,4 @@ def get_sellability_report(melons):
 
     
             
-#print(get_sellability_report(make_melons(make_melon_types)))
+get_sellability_report(make_melons((make_melon_types())))
